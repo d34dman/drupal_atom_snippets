@@ -1,0 +1,13 @@
+'.source.drupal':
+  hook_field_purge_field_instance:
+    prefix: 'hook_field_purge_field_instance'
+    body: '''
+      /**
+       * Implements hook_field_purge_field_instance().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_field_purge_field_instance(\\$instance) {
+        db_delete('${1}')
+          ->condition('id', \\$instance['id'])
+          ->execute();
+      }$0
+    '''

@@ -1,0 +1,13 @@
+'.source.drupal':
+  h_date_formats_alter:
+    prefix: 'h_date_formats_alter'
+    body: '''
+      /**
+       * Implements hook_date_formats_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_date_formats_alter(&\\$formats) {
+        foreach (\\$formats as \\$id => \\$format) {
+          \\$formats[\\$id]['${1}'][] = '${2}';
+        }
+      }$0
+    '''

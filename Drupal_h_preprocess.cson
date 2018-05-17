@@ -1,0 +1,12 @@
+'.source.drupal':
+  h_preprocess:
+    prefix: 'h_preprocess'
+    body: '''
+      /**
+       * Implements hook_preprocess().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_preprocess(&\\$variables, \\$hook) {
+        static \\$hooks;
+        ${1:/* Your code here */}
+      }$0
+    '''

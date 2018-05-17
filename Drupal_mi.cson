@@ -1,0 +1,13 @@
+'.source.drupal':
+  mi:
+    prefix: 'mi'
+    body: '''
+      \\$items['${1}'] = array(
+      	'title' => '${2}',
+      	'page callback' => '${3}',
+      	'page arguments' => array('${4}'),
+      	'access arguments' => array('${5}'),
+      	'type' => ${6},
+      	'file' => ${7},${8}
+      );$0
+    '''

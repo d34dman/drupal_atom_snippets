@@ -1,0 +1,17 @@
+'.source.drupal':
+  hook_user_role_update:
+    prefix: 'hook_user_role_update'
+    body: '''
+      /**
+       * Implements hook_user_role_update().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_user_role_update(\\$role) {
+        // Save extra fields provided by the module to user roles.
+        db_merge('${1}')
+          ->key(array('rid' => \\$role->rid))
+          ->fields(array(
+            'role_description' => \\$role->description
+          ))
+          ->execute();
+      }$0
+    '''

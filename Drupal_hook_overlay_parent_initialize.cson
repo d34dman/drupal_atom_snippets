@@ -1,0 +1,15 @@
+'.source.drupal':
+  hook_overlay_parent_initialize:
+    prefix: 'hook_overlay_parent_initialize'
+    body: '''
+      /**
+       * Implements hook_overlay_parent_initialize().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_overlay_parent_initialize() {
+        // Add our custom JavaScript.
+        /*
+         *drupal_add_js(drupal_get_path('module', 'hook') . '/hook-overlay.js');
+         */
+        ${1:/* Your code here */}
+      }$0
+    '''

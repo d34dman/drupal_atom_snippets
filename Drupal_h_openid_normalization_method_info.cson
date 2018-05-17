@@ -1,0 +1,13 @@
+'.source.drupal':
+  h_openid_normalization_method_info:
+    prefix: 'h_openid_normalization_method_info'
+    body: '''
+      /**
+       * Implements hook_openid_normalization_method_info().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_openid_normalization_method_info() {
+        return array(
+          '${1}' => '${2}',
+        );
+      }$0
+    '''

@@ -1,0 +1,12 @@
+'.source.drupal':
+  h_field_storage_details:
+    prefix: 'h_field_storage_details'
+    body: '''
+      /**
+       * Implements hook_field_storage_details().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_field_storage_details(\\$field) {
+        \\$details = array();
+        ${1:/* Your code here */}
+      }$0
+    '''

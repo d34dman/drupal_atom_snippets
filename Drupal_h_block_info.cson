@@ -1,0 +1,16 @@
+'.source.drupal':
+  h_block_info:
+    prefix: 'h_block_info'
+    body: '''
+      /**
+       * Implements hook_block_info().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_block_info() {
+        \\$blocks['${1}'] = array(
+          'info' => t('${2}'),
+          'cache' => ${3}DRUPAL_NO_CACHE
+        );
+      
+        return \\$blocks;
+      }$0
+    '''

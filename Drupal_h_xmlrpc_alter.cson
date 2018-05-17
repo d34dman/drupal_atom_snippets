@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_xmlrpc_alter:
+    prefix: 'h_xmlrpc_alter'
+    body: '''
+      /**
+       * Implements hook_xmlrpc_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_xmlrpc_alter(&\\$methods) {
+        ${1:/* Your code here */}
+      }$0
+    '''

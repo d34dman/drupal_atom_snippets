@@ -1,0 +1,19 @@
+'.source.drupal':
+  h_block_configure:
+    prefix: 'h_block_configure'
+    body: '''
+      /**
+       * Implements hook_block_configure().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_block_configure(\\$delta = '') {
+        \\$form = array();
+        if (\\$delta == '${1}') {
+          \\$form['${2}']${3} = array(
+            '#type' => '${4}',
+            '#title' => t('${5}'),
+            '#default_value' => variable_get('${6}', ${7}),${8}
+          );
+        }
+        return \\$form;
+      }$0
+    '''

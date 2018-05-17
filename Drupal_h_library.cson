@@ -1,0 +1,28 @@
+'.source.drupal':
+  h_library:
+    prefix: 'h_library'
+    body: '''
+      /**
+       * Implements hook_library().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_library() {
+        \\$libraries['${1}'] = array(
+          'title' => '${2}',
+          'website' => '${3}',
+          'version' => '${4}',
+          'js' => array(
+            drupal_get_path('module', '${TM_FILENAME/([^.]*)\\..*$/$1/}') . '/${5}' => array(),
+          ),
+          'css' => array(
+            drupal_get_path('module', '${TM_FILENAME/([^.]*)\\..*$/$1/}') . '/${6}' => array(
+              'type' => 'file',
+              'media' => '${7}',
+            ),
+          ),
+          'dependencies' => array(
+            array('system', 'ui'),
+          ),
+        );
+        return \\$libraries;
+      }$0
+    '''

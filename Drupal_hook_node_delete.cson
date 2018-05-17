@@ -1,0 +1,13 @@
+'.source.drupal':
+  hook_node_delete:
+    prefix: 'hook_node_delete'
+    body: '''
+      /**
+       * Implements hook_node_delete().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_node_delete(\\$node) {
+        db_delete('${1}')
+          ->condition('nid', \\$node->nid)
+          ->execute();
+      }$0
+    '''

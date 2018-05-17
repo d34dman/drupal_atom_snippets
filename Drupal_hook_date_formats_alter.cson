@@ -1,0 +1,16 @@
+'.source.drupal':
+  hook_date_formats_alter:
+    prefix: 'hook_date_formats_alter'
+    body: '''
+      /**
+       * Implements hook_date_formats_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_date_formats_alter(&\\$formats) {
+        foreach (\\$formats as \\$id => \\$format) {
+          /*
+           *\\$formats[\\$id]['locales'][] = 'en-ca';
+           */
+          \\$formats[\\$id]['${1}'][] = '${2}';
+        }
+      }$0
+    '''

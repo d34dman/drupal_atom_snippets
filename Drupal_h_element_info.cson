@@ -1,0 +1,14 @@
+'.source.drupal':
+  h_element_info:
+    prefix: 'h_element_info'
+    body: '''
+      /**
+       * Implements hook_element_info().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_element_info() {
+        \\$types['${1}'] = array(
+          ${2:/* Your code here */}
+        );
+        return \\$types;
+      }$0
+    '''

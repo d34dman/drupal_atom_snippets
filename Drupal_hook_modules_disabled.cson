@@ -1,0 +1,16 @@
+'.source.drupal':
+  hook_modules_disabled:
+    prefix: 'hook_modules_disabled'
+    body: '''
+      /**
+       * Implements hook_modules_disabled().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_modules_disabled(\\$modules) {
+        /*
+         *if (in_array('lousy_module', \\$modules)) {
+         *  mymodule_enable_functionality();
+         *}
+         */
+        ${1:/* Your code here */}
+      }$0
+    '''

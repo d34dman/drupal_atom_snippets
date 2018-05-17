@@ -1,0 +1,31 @@
+'.source.drupal':
+  hook_updater_info:
+    prefix: 'hook_updater_info'
+    body: '''
+      /**
+       * Implements hook_updater_info().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_updater_info() {
+        /*
+         *return array(
+         *  'module' => array(
+         *    'class' => 'ModuleUpdater',
+         *    'name' => t('Update modules'),
+         *    'weight' => 0,
+         *  ),
+         *  'theme' => array(
+         *    'class' => 'ThemeUpdater',
+         *    'name' => t('Update themes'),
+         *    'weight' => 0,
+         *  ),
+         *);
+         */
+        return array(
+          '${1}' => array(
+            'class' => '${2}',
+            'name' => t('${3}'),
+            'weight' => ${4},
+          ),
+        );
+      }$0
+    '''

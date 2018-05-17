@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_install_tasks_alter:
+    prefix: 'h_install_tasks_alter'
+    body: '''
+      /**
+       * Implements hook_install_tasks_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_install_tasks_alter(&\\$tasks, \\$install_state) {
+        \\$tasks['${1}']['${2}'] = '${3}';
+      }$0
+    '''

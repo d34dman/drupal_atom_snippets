@@ -1,0 +1,14 @@
+'.source.drupal':
+  h_token_info_alter:
+    prefix: 'h_token_info_alter'
+    body: '''
+      /**
+       * Implements hook_token_info_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_token_info_alter(&\\$data) {
+        \\$data['tokens']['${1}']['${2}'] = array(
+          'name' => t("${3}"),
+          'description' => t("${4}"),
+        );
+      }$0
+    '''

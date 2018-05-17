@@ -1,0 +1,15 @@
+'.source.drupal':
+  h_options_list:
+    prefix: 'h_options_list'
+    body: '''
+      /**
+       * Implements hook_options_list().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_options_list(\\$field) {
+         \\$options = array(
+           ${1} => ${2},
+         );
+      
+        return \\$options;
+      }$0
+    '''

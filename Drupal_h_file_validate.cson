@@ -1,0 +1,16 @@
+'.source.drupal':
+  h_file_validate:
+    prefix: 'h_file_validate'
+    body: '''
+      /**
+       * Implements hook_file_validate().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_file_validate(&\\$file) {
+        \\$errors = array();
+        if (${1}) {
+          \\$errors[] = t("${2}");
+        }
+      
+        return \\$errors;
+      }$0
+    '''

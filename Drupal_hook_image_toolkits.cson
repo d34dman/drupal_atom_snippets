@@ -1,0 +1,16 @@
+'.source.drupal':
+  hook_image_toolkits:
+    prefix: 'hook_image_toolkits'
+    body: '''
+      /**
+       * Implements hook_image_toolkits().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_image_toolkits() {
+        return array(
+          '${1}' => array(
+            'title' => t('${2}'),
+            'available' => TRUE,
+          ),
+        );
+      }$0
+    '''

@@ -1,0 +1,21 @@
+'.source.drupal':
+  h_field_widget_info:
+    prefix: 'h_field_widget_info'
+    body: '''
+      /**
+       * Implements hook_field_widget_info().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_field_widget_info() {
+          return array(
+          '${1}' => array(
+            'label' => t('${2}'),
+            'field types' => array('${3}'),
+            'settings' => array('${4}' => ${5}),
+            'behaviors' => array(
+              'multiple values' => ${6}FIELD_BEHAVIOR_DEFAULT,
+              'default value' => ${7}FIELD_BEHAVIOR_DEFAULT,
+            ),
+          ),
+        );
+      }$0
+    '''

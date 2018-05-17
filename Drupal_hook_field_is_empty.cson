@@ -1,0 +1,17 @@
+'.source.drupal':
+  hook_field_is_empty:
+    prefix: 'hook_field_is_empty'
+    body: '''
+      /**
+       * Implements hook_field_is_empty().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_field_is_empty(\\$item, \\$field) {
+        /*
+         *if (empty(\\$item['value']) && (string) \\$item['value'] !== '0') {
+         *  return TRUE;
+         *}
+         *return FALSE;
+         */
+        ${1:/* Your code here */}
+      }$0
+    '''

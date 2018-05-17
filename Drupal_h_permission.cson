@@ -1,0 +1,16 @@
+'.source.drupal':
+  h_permission:
+    prefix: 'h_permission'
+    body: '''
+      /**
+       * Implements hook_permission().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_permission() {
+        return array(
+          '${1}' =>  array(
+            'title' => t('${2}'),
+            'description' => t('${3}'),
+          ),
+        );
+      }$0
+    '''

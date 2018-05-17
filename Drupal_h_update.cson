@@ -1,0 +1,14 @@
+'.source.drupal':
+  h_update:
+    prefix: 'h_update'
+    body: '''
+      /**
+       * Implements hook_update().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_update(\\$node) {
+        db_update('${1}')
+          ->fields(array('extra' => \\$node->extra))
+          ->condition('nid', \\$node->nid)
+          ->execute();
+      }$0
+    '''

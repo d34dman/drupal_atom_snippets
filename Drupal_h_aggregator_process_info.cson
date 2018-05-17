@@ -1,0 +1,14 @@
+'.source.drupal':
+  h_aggregator_process_info:
+    prefix: 'h_aggregator_process_info'
+    body: '''
+      /**
+       * Implements hook_aggregator_process_info().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_aggregator_process_info(\\$feed) {
+        return array(
+          'title' => t('${1}'),
+          'description' => t('${2}'),
+        );
+      }$0
+    '''

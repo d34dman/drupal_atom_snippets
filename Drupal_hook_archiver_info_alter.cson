@@ -1,0 +1,14 @@
+'.source.drupal':
+  hook_archiver_info_alter:
+    prefix: 'hook_archiver_info_alter'
+    body: '''
+      /**
+       * Implements hook_archiver_info_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_archiver_info_alter(&\\$info) {
+        /*
+         *\\$info['tar']['extensions'][] = 'tgz';
+         */
+        \\$info['${1}']['${2}'][] = '${3}';
+      }$0
+    '''

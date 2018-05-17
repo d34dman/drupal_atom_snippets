@@ -1,0 +1,13 @@
+'.source.drupal':
+  h_module_implements_alter:
+    prefix: 'h_module_implements_alter'
+    body: '''
+      /**
+       * Implements hook_module_implements_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_module_implements_alter(&\\$implementations, \\$hook) {
+        if (\\$hook == '${1}') {
+          ${2:/* Your code here */}
+        }
+      }$0
+    '''

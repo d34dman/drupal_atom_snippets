@@ -1,0 +1,13 @@
+'.source.drupal':
+  h_mail_alter:
+    prefix: 'h_mail_alter'
+    body: '''
+      /**
+       * Implements hook_mail_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_mail_alter(&\\$message) {
+        if (\\$message['id'] == '${1}') {
+          \\$message['body'][] = "${2}";
+        }
+      }$0
+    '''

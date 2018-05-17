@@ -1,0 +1,22 @@
+'.source.drupal':
+  hook_search_page:
+    prefix: 'hook_search_page'
+    body: '''
+      /**
+       * Implements hook_search_page().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_search_page(\\$results) {
+        \\$output['prefix']['#markup'] = '<ol class="search-results">';
+      
+        foreach (\\$results as \\$entry) {
+          \\$output[] = array(
+            '#theme' => '${1}',
+            '#result' => \\$entry,
+            '#module' => '${2}',
+          );
+        }
+        \\$output['suffix']['#markup'] = '</ol>' . theme('pager');
+      
+        return \\$output;
+      }$0
+    '''

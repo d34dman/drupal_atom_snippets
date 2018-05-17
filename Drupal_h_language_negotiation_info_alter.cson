@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_language_negotiation_info_alter:
+    prefix: 'h_language_negotiation_info_alter'
+    body: '''
+      /**
+       * Implements hook_language_negotiation_info_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_language_negotiation_info_alter(array &\\$language_providers) {
+        ${1:/* Your code here */}
+      }$0
+    '''

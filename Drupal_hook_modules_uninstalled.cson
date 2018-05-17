@@ -1,0 +1,16 @@
+'.source.drupal':
+  hook_modules_uninstalled:
+    prefix: 'hook_modules_uninstalled'
+    body: '''
+      /**
+       * Implements hook_modules_uninstalled().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_modules_uninstalled(\\$modules) {
+        foreach (\\$modules as \\$module) {
+          db_delete('${1}')
+            ->condition('module', \\$module)
+            ->execute();
+        }
+        ${2}_cache_rebuild();
+      }$0
+    '''

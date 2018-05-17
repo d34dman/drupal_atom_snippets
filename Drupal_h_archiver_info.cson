@@ -1,0 +1,16 @@
+'.source.drupal':
+  h_archiver_info:
+    prefix: 'h_archiver_info'
+    body: '''
+      /**
+       * Implements hook_archiver_info().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_archiver_info() {
+        return array(
+          '${1}' => array(
+            'class' => '${2}',
+            'extensions' => array('${3}'${4}),
+          ),
+        );
+      }$0
+    '''

@@ -1,0 +1,17 @@
+'.source.drupal':
+  h_search_admin:
+    prefix: 'h_search_admin'
+    body: '''
+      /**
+       * Implements hook_search_admin().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_search_admin() {
+        \\$form['${1}']${2} = array(
+          '#title' => t('${3}'),
+          '#type' => '${4}',
+          '#theme' => '${5}',
+          '#default_value' => ${6},${7}
+      
+        return \\$form;
+      }$0
+    '''

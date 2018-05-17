@@ -1,0 +1,20 @@
+'.source.drupal':
+  h_menu:
+    prefix: 'h_menu'
+    body: '''
+      /**
+       * Implements hook_menu().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_menu() {
+        \\$items['${1}'] = array(
+          'title' => '${2}',
+          'page callback' => '${3}',
+          'page arguments' => array(${4}),
+          'access arguments' => array('${5}'),
+          'type' => ${6},
+          'file' => ${7},${8}
+        );
+      
+        return \\$items;
+      }$0
+    '''

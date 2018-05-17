@@ -1,0 +1,13 @@
+'.source.drupal':
+  hook_node_revision_delete:
+    prefix: 'hook_node_revision_delete'
+    body: '''
+      /**
+       * Implements hook_node_revision_delete().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_node_revision_delete(\\$node) {
+        db_delete('${1}')
+          ->condition('vid', \\$node->vid)
+          ->execute();
+      }$0
+    '''

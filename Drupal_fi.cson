@@ -1,0 +1,10 @@
+'.source.drupal':
+  fi:
+    prefix: 'fi'
+    body: '''
+      \\$form['${1}']${2} = array(
+      	'#type' => '${3}',
+      	'#title' => t('${4}'),
+      	'#default_value' => ${5},${6}
+      );$0
+    '''

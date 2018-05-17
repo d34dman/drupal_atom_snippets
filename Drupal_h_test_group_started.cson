@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_test_group_started:
+    prefix: 'h_test_group_started'
+    body: '''
+      /**
+       * Implements hook_test_group_started().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_test_group_started() {
+        ${1:/* Your code here */}
+      }$0
+    '''

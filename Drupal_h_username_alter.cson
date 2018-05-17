@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_username_alter:
+    prefix: 'h_username_alter'
+    body: '''
+      /**
+       * Implements hook_username_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_username_alter(&\\$name, \\$account) {
+        ${1:/* Your code here */}
+      }$0
+    '''

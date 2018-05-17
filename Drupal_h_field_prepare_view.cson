@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_field_prepare_view:
+    prefix: 'h_field_prepare_view'
+    body: '''
+      /**
+       * Implements hook_field_prepare_view().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_field_prepare_view(\\$entity_type, \\$entities, \\$field, \\$instances, \\$langcode, &\\$items) {
+        ${1:/* Your code here */}
+      }$0
+    '''

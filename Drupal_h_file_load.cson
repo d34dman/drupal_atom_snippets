@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_file_load:
+    prefix: 'h_file_load'
+    body: '''
+      /**
+       * Implements hook_file_load().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_file_load(\\$files) {
+        ${1:/* Your code here */}
+      }$0
+    '''

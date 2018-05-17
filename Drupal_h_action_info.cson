@@ -1,0 +1,19 @@
+'.source.drupal':
+  h_action_info:
+    prefix: 'h_action_info'
+    body: '''
+      /**
+       * Implements hook_action_info().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_action_info() {
+        return array(
+          '${1}' => array(
+            'type' => '${2}',
+            'label' => t('${3}'),
+            'configurable' => ${4},
+            'behavior' => array('${5}'),
+            'triggers' => array('${6}', ${7}),
+          ),
+        );
+      }$0
+    '''

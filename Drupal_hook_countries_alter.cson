@@ -1,0 +1,15 @@
+'.source.drupal':
+  hook_countries_alter:
+    prefix: 'hook_countries_alter'
+    body: '''
+      /**
+       * Implements hook_countries_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_countries_alter(&\\$countries) {
+        // Elbonia is now independent, so add it to the country list.
+        /*
+         *\\$countries['EB'] = 'Elbonia';
+         */
+        ${1:/* Your code here */}
+      }$0
+    '''

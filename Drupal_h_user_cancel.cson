@@ -1,0 +1,15 @@
+'.source.drupal':
+  h_user_cancel:
+    prefix: 'h_user_cancel'
+    body: '''
+      /**
+       * Implements hook_user_cancel().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_user_cancel(\\$edit, \\$account, \\$method) {
+        switch (\\$method) {
+          case '${1}':
+            ${2:/* Your code here */}
+            break;
+        }
+      }$0
+    '''

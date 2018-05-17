@@ -1,0 +1,11 @@
+'.source.drupal':
+  hook_entity_update:
+    prefix: 'hook_entity_update'
+    body: '''
+      /**
+       * Implements hook_entity_update().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_entity_update(\\$entity, \\$type) {
+        ${1:/* Your code here */}
+      }$0
+    '''

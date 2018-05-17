@@ -1,0 +1,17 @@
+'.source.drupal':
+  hook_system_info_alter:
+    prefix: 'hook_system_info_alter'
+    body: '''
+      /**
+       * Implements hook_system_info_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_system_info_alter(&\\$info, \\$file, \\$type) {
+        // Only fill this in if the .info file does not define a 'datestamp'.
+        /*
+         *if (empty(\\$info['datestamp'])) {
+         *  \\$info['datestamp'] = filemtime(\\$file->filename);
+         *}
+         */
+        ${1:/* Your code here */}
+      }$0
+    '''

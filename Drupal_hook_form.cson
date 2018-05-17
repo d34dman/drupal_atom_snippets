@@ -1,0 +1,19 @@
+'.source.drupal':
+  hook_form:
+    prefix: 'hook_form'
+    body: '''
+      /**
+       * Implements hook_form().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_form(\\$node, &\\$form_state) {
+        \\$type = node_type_get_type(\\$node);
+      
+        \\$form['${1}']${2} = array(
+          '#type' => '${3}',
+          '#title' => t('${4}'),
+          '#default_value' => \\$node->${5},${6}
+        );
+      
+        return \\$form;
+      }$0
+    '''

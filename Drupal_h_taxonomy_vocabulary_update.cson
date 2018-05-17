@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_taxonomy_vocabulary_update:
+    prefix: 'h_taxonomy_vocabulary_update'
+    body: '''
+      /**
+       * Implements hook_taxonomy_vocabulary_update().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_taxonomy_vocabulary_update(\\$vocabulary) {
+        ${1:/* Your code here */}
+      }$0
+    '''

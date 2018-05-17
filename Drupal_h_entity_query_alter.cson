@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_entity_query_alter:
+    prefix: 'h_entity_query_alter'
+    body: '''
+      /**
+       * Implements hook_entity_query_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_entity_query_alter(\\$query) {
+        \\$query->${1} = '${TM_FILENAME/([^.]*)\\..*$/$1/}_query_callback';
+      }$0
+    '''

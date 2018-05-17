@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_search_access:
+    prefix: 'h_search_access'
+    body: '''
+      /**
+       * Implements hook_search_access().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_search_access() {
+        ${1:/* Your code here */}
+      }$0
+    '''

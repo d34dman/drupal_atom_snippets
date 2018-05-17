@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_install:
+    prefix: 'h_install'
+    body: '''
+      /**
+       * Implements hook_install().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_install() {
+        ${1:/* Your code here */}
+      }$0
+    '''

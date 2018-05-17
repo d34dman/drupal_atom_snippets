@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_archiver_info_alter:
+    prefix: 'h_archiver_info_alter'
+    body: '''
+      /**
+       * Implements hook_archiver_info_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_archiver_info_alter(&\\$info) {
+        \\$info['${1}']['${2}'][] = '${3}';
+      }$0
+    '''

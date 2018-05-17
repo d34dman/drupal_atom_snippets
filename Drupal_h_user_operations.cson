@@ -1,0 +1,17 @@
+'.source.drupal':
+  h_user_operations:
+    prefix: 'h_user_operations'
+    body: '''
+      /**
+       * Implements hook_user_operations().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_user_operations() {
+        \\$operations = array(
+          '${1}' => array(
+            'label' => t('${2}'),
+            'callback' => '${3}',
+          ),
+        );
+        return \\$operations;
+      }$0
+    '''

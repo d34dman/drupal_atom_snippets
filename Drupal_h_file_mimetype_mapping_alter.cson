@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_file_mimetype_mapping_alter:
+    prefix: 'h_file_mimetype_mapping_alter'
+    body: '''
+      /**
+       * Implements hook_file_mimetype_mapping_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_file_mimetype_mapping_alter(&\\$mapping) {
+        \\$mapping['${1}']['${2}'] = '${3}';
+      }$0
+    '''

@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_menu_update:
+    prefix: 'h_menu_update'
+    body: '''
+      /**
+       * Implements hook_menu_update().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_menu_update(\\$menu) {
+        ${1:/* Your code here */}
+      }$0
+    '''

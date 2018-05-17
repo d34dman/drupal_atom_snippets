@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_aggregator_remove:
+    prefix: 'h_aggregator_remove'
+    body: '''
+      /**
+       * Implements hook_aggregator_remove().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_aggregator_remove(\\$feed) {
+        ${1:/* Your code here */}
+      }$0
+    '''

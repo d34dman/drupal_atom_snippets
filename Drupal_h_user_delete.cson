@@ -1,0 +1,13 @@
+'.source.drupal':
+  h_user_delete:
+    prefix: 'h_user_delete'
+    body: '''
+      /**
+       * Implements hook_user_delete().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_user_delete(\\$account) {
+        db_delete('${1}')
+          ->condition('uid', \\$account->uid)
+          ->execute();
+      }$0
+    '''

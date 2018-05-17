@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_admin_paths_alter:
+    prefix: 'h_admin_paths_alter'
+    body: '''
+      /**
+       * Implements hook_admin_paths_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_admin_paths_alter(&\\$paths) {
+        \\$paths['${1}'] = ${2};
+      }$0
+    '''

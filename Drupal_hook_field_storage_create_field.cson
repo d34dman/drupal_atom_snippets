@@ -1,0 +1,18 @@
+'.source.drupal':
+  hook_field_storage_create_field:
+    prefix: 'hook_field_storage_create_field'
+    body: '''
+      /**
+       * Implements hook_field_storage_create_field().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_field_storage_create_field(\\$field) {
+        /*
+         *\\$schema = _field_sql_storage_schema(\\$field);
+         *foreach (\\$schema as \\$name => \\$table) {
+         *  db_create_table(\\$name, \\$table);
+         *}
+         *drupal_get_schema(NULL, TRUE);
+         */
+        ${1:/* Your code here */}
+      }$0
+    '''

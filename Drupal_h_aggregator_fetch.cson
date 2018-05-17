@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_aggregator_fetch:
+    prefix: 'h_aggregator_fetch'
+    body: '''
+      /**
+       * Implements hook_aggregator_fetch().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_aggregator_fetch(\\$feed) {
+        ${1:/* Your code here */}
+      }$0
+    '''

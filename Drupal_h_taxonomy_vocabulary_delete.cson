@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_taxonomy_vocabulary_delete:
+    prefix: 'h_taxonomy_vocabulary_delete'
+    body: '''
+      /**
+       * Implements hook_taxonomy_vocabulary_delete().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_taxonomy_vocabulary_delete(\\$vocabulary) {
+        ${1:/* Your code here */}
+      }$0
+    '''

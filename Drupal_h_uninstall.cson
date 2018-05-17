@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_uninstall:
+    prefix: 'h_uninstall'
+    body: '''
+      /**
+       * Implements hook_uninstall().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_uninstall() {
+        variable_del('${1}');
+      }$0
+    '''

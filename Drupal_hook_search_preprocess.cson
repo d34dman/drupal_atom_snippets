@@ -1,0 +1,15 @@
+'.source.drupal':
+  hook_search_preprocess:
+    prefix: 'hook_search_preprocess'
+    body: '''
+      /**
+       * Implements hook_search_preprocess().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_search_preprocess(\\$text) {
+        // Do processing on \\$text
+        /*
+         *return \\$text;
+         */
+        ${1:/* Your code here */}
+      }$0
+    '''

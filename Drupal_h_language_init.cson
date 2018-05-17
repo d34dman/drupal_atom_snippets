@@ -1,0 +1,17 @@
+'.source.drupal':
+  h_language_init:
+    prefix: 'h_language_init'
+    body: '''
+      /**
+       * Implements hook_language_init().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_language_init() {
+        global \\$language, \\$conf;
+      
+        switch (\\$language->language) {
+          case '${1}':
+            \\$conf['${2}'] = '${3}';
+            break;
+        }
+      }$0
+    '''

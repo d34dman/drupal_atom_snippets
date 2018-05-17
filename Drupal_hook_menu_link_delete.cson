@@ -1,0 +1,14 @@
+'.source.drupal':
+  hook_menu_link_delete:
+    prefix: 'hook_menu_link_delete'
+    body: '''
+      /**
+       * Implements hook_menu_link_delete().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_menu_link_delete(\\$link) {
+        // Delete the record from our table.
+        db_delete('${1}')
+          ->condition('mlid', \\$link['mlid'])
+          ->execute();
+      }$0
+    '''

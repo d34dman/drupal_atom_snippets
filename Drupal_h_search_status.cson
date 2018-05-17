@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_search_status:
+    prefix: 'h_search_status'
+    body: '''
+      /**
+       * Implements hook_search_status().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_search_status() {
+        ${1:/* Your code here */}
+      }$0
+    '''

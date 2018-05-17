@@ -1,0 +1,14 @@
+'.source.drupal':
+  hook_filter_format_disable:
+    prefix: 'hook_filter_format_disable'
+    body: '''
+      /**
+       * Implements hook_filter_format_disable().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_filter_format_disable(\\$format) {
+        /*
+         *mymodule_cache_rebuild();
+         */
+        ${1:/* Your code here */}
+      }$0
+    '''

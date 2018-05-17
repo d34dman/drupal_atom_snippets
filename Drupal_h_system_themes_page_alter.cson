@@ -1,0 +1,15 @@
+'.source.drupal':
+  h_system_themes_page_alter:
+    prefix: 'h_system_themes_page_alter'
+    body: '''
+      /**
+       * Implements hook_system_themes_page_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_system_themes_page_alter(&\\$theme_groups) {
+        foreach (\\$theme_groups as \\$state => &\\$group) {
+          foreach (\\$theme_groups[\\$state] as &\\$theme) {
+            ${1:/* Your code here */}
+          }
+        }
+      }$0
+    '''

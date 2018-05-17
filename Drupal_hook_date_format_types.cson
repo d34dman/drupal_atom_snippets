@@ -1,0 +1,18 @@
+'.source.drupal':
+  hook_date_format_types:
+    prefix: 'hook_date_format_types'
+    body: '''
+      /**
+       * Implements hook_date_format_types().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_date_format_types() {
+        return array(
+          /*
+           *'long' => t('Long'),
+           *'medium' => t('Medium'),
+           *'short' => t('Short'),
+           */
+          '${1}' => t('${2}'),
+        );
+      }$0
+    '''

@@ -1,0 +1,16 @@
+'.source.drupal':
+  h_user_role_insert:
+    prefix: 'h_user_role_insert'
+    body: '''
+      /**
+       * Implements hook_user_role_insert().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_user_role_insert(\\$role) {
+        db_insert('${1}')
+          ->fields(array(
+            'rid' => \\$role->rid,
+            'role_description' => \\$role->description,
+          ))
+          ->execute();
+      }$0
+    '''

@@ -1,0 +1,15 @@
+'.source.drupal':
+  h_update_dependencies:
+    prefix: 'h_update_dependencies'
+    body: '''
+      /**
+       * Implements hook_update_dependencies().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_update_dependencies() {
+        \\$dependencies['${1}']['${2}'] = array(
+          '${3}' => ${4},
+        );
+      
+        return \\$dependencies;
+      }$0
+    '''

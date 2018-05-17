@@ -1,0 +1,14 @@
+'.source.drupal':
+  hook_flush_caches:
+    prefix: 'hook_flush_caches'
+    body: '''
+      /**
+       * Implements hook_flush_caches().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_flush_caches() {
+        /*
+         *return array('cache_example');
+         */
+        return array('${1}');
+      }$0
+    '''

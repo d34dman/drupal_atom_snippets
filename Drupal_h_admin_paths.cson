@@ -1,0 +1,14 @@
+'.source.drupal':
+  h_admin_paths:
+    prefix: 'h_admin_paths'
+    body: '''
+      /**
+       * Implements hook_admin_paths().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_admin_paths() {
+        \\$paths = array(
+          ${1:/* Your code here */}
+        );
+        return \\$paths;
+      }$0
+    '''

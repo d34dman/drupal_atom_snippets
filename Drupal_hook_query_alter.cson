@@ -1,0 +1,16 @@
+'.source.drupal':
+  hook_query_alter:
+    prefix: 'hook_query_alter'
+    body: '''
+      /**
+       * Implements hook_query_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_query_alter(QueryAlterableInterface \\$query) {
+        if (\\$query->hasTag('${1}')) {
+          /*
+           *\\$query->range(0, 2);
+           */
+          ${2:/* Your code here */}
+        }
+      }$0
+    '''

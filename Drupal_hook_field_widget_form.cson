@@ -1,0 +1,21 @@
+'.source.drupal':
+  hook_field_widget_form:
+    prefix: 'hook_field_widget_form'
+    body: '''
+      /**
+       * Implements hook_field_widget_form().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_field_widget_form(&\\$form, &\\$form_state, \\$field, \\$instance, \\$langcode, \\$items, \\$delta, \\$element) {
+        /*
+         *\\$element += array(
+         *  '#type' => \\$instance['widget']['type'],
+         *  '#default_value' => isset(\\$items[\\$delta]) ? \\$items[\\$delta] : '',
+         *);
+         */
+        \\$element += array(
+          '#type' => ${1},
+          '#default_value' => ${2},
+        );
+        return \\$element;
+      }$0
+    '''

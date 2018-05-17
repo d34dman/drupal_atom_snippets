@@ -1,0 +1,16 @@
+'.source.drupal':
+  h_language_types_info:
+    prefix: 'h_language_types_info'
+    body: '''
+      /**
+       * Implements hook_language_types_info().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_language_types_info() {
+        return array(
+          '${1}' => array(
+            'name' => t('${2}'),
+            'description' => t('${3}'),
+          ),
+        );
+      }$0
+    '''

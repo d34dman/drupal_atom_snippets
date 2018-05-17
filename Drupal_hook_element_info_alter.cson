@@ -1,0 +1,19 @@
+'.source.drupal':
+  hook_element_info_alter:
+    prefix: 'hook_element_info_alter'
+    body: '''
+      /**
+       * Implements hook_element_info_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_element_info_alter(&\\$type) {
+        // Decrease the default size of textfields.
+        /*
+         *if (isset(\\$type['textfield']['#size'])) {
+         *  \\$type['textfield']['#size'] = 40;
+         *}
+         */
+        if (isset(\\$type['${1}'])) {
+          \\$type['${2}'] = ${3};
+        }
+      }$0
+    '''

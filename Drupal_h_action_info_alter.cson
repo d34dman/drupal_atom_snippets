@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_action_info_alter:
+    prefix: 'h_action_info_alter'
+    body: '''
+      /**
+       * Implements hook_action_info_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_action_info_alter(&\\$actions) {
+        \\$actions['${1}']['${2}'] = t('${3}');
+      }$0
+    '''

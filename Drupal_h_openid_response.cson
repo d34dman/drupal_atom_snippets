@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_openid_response:
+    prefix: 'h_openid_response'
+    body: '''
+      /**
+       * Implements hook_openid_response().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_openid_response(\\$response, \\$account) {
+        ${1:/* Your code here */}
+      }$0
+    '''

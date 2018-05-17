@@ -1,0 +1,17 @@
+'.source.drupal':
+  hook_simpletest_alter:
+    prefix: 'hook_simpletest_alter'
+    body: '''
+      /**
+       * Implements hook_simpletest_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_simpletest_alter(&\\$groups) {
+        // An alternative session handler module would not want to run the original
+        // Session https handling test because it checks the sessions table in the
+        // database.
+        /*
+         *unset(\\$groups['Session']['testHttpsSession']);
+         */
+        ${1:/* Your code here */}
+      }$0
+    '''

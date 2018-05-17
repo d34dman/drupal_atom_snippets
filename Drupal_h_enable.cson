@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_enable:
+    prefix: 'h_enable'
+    body: '''
+      /**
+       * Implements hook_enable().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_enable() {
+        ${1:/* Your code here */}
+      }$0
+    '''

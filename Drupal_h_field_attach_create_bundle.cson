@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_field_attach_create_bundle:
+    prefix: 'h_field_attach_create_bundle'
+    body: '''
+      /**
+       * Implements hook_field_attach_create_bundle().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_field_attach_create_bundle(\\$entity_type, \\$bundle) {
+        ${1:/* Your code here */}
+      }$0
+    '''

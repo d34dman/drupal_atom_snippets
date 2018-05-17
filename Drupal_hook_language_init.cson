@@ -1,0 +1,22 @@
+'.source.drupal':
+  hook_language_init:
+    prefix: 'hook_language_init'
+    body: '''
+      /**
+       * Implements hook_language_init().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_language_init() {
+        global \\$language, \\$conf;
+      
+        switch (\\$language->language) {
+          /*
+           *case 'it':
+           *  \\$conf['site_name'] = 'Il mio sito Drupal';
+           *  break;
+           */
+          case '${1}':
+            \\$conf['${2}'] = '${3}';
+            break;
+        }
+      }$0
+    '''

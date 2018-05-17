@@ -1,0 +1,14 @@
+'.source.drupal':
+  hook_locale:
+    prefix: 'hook_locale'
+    body: '''
+      /**
+       * Implements hook_locale().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_locale(\\$op = 'groups') {
+        switch (\\$op) {
+          case '${1}':
+            return array('${2}' => t('${3}'));
+        }
+      }$0
+    '''

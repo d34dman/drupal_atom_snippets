@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_filter_format_update:
+    prefix: 'h_filter_format_update'
+    body: '''
+      /**
+       * Implements hook_filter_format_update().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_filter_format_update(\\$format) {
+        ${1:/* Your code here */}
+      }$0
+    '''

@@ -1,0 +1,14 @@
+'.source.drupal':
+  h_requirements:
+    prefix: 'h_requirements'
+    body: '''
+      /**
+       * Implements hook_requirements().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_requirements(\\$phase) {
+        \\$requirements = array();
+        ${1:/* Your code here */}
+      
+        return \\$requirements;
+      }$0
+    '''

@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_comment_publish:
+    prefix: 'h_comment_publish'
+    body: '''
+      /**
+       * Implements hook_comment_publish().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_comment_publish(\\$comment) {
+        ${1:/* Your code here */}
+      }$0
+    '''

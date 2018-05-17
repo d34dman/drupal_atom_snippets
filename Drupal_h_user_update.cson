@@ -1,0 +1,16 @@
+'.source.drupal':
+  h_user_update:
+    prefix: 'h_user_update'
+    body: '''
+      /**
+       * Implements hook_user_update().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_user_update(&\\$edit, \\$account, \\$category) {
+        db_insert('${1}')
+          ->fields(array(
+            'uid' => \\$account->uid,
+            'changed' => time(),
+          ))
+          ->execute();
+      }$0
+    '''

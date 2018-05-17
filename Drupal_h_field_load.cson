@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_field_load:
+    prefix: 'h_field_load'
+    body: '''
+      /**
+       * Implements hook_field_load().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_field_load(\\$entity_type, \\$entities, \\$field, \\$instances, \\$langcode, &\\$items, \\$age) {
+        ${1:/* Your code here */}
+      }$0
+    '''

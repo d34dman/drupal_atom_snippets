@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_menu_local_tasks_alter:
+    prefix: 'h_menu_local_tasks_alter'
+    body: '''
+      /**
+       * Implements hook_menu_local_tasks_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_menu_local_tasks_alter(&\\$data, \\$router_item, \\$root_path) {
+        ${1:/* Your code here */}
+      }$0
+    '''

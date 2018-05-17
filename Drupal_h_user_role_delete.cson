@@ -1,0 +1,13 @@
+'.source.drupal':
+  h_user_role_delete:
+    prefix: 'h_user_role_delete'
+    body: '''
+      /**
+       * Implements hook_user_role_delete().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_user_role_delete(\\$role) {
+        db_delete('${1}')
+          ->condition('rid', \\$role->rid)
+          ->execute();
+      }$0
+    '''

@@ -1,0 +1,16 @@
+'.source.drupal':
+  h_user_role_update:
+    prefix: 'h_user_role_update'
+    body: '''
+      /**
+       * Implements hook_user_role_update().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_user_role_update(\\$role) {
+        db_merge('${1}')
+          ->key(array('rid' => \\$role->rid))
+          ->fields(array(
+            'role_description' => \\$role->description
+          ))
+          ->execute();
+      }$0
+    '''

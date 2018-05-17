@@ -1,0 +1,13 @@
+'.source.drupal':
+  h_rdf_namespaces:
+    prefix: 'h_rdf_namespaces'
+    body: '''
+      /**
+       * Implements hook_rdf_namespaces().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_rdf_namespaces() {
+        return array(
+          '${1}'  => '${2}',
+        );
+      }$0
+    '''

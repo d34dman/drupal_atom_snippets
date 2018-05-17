@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_cron_queue_info_alter:
+    prefix: 'h_cron_queue_info_alter'
+    body: '''
+      /**
+       * Implements hook_cron_queue_info_alter().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_cron_queue_info_alter(&\\$queues) {
+        \\$queues['${1}']['time'] = ${2};
+      }$0
+    '''

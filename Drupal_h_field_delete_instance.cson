@@ -1,0 +1,11 @@
+'.source.drupal':
+  h_field_delete_instance:
+    prefix: 'h_field_delete_instance'
+    body: '''
+      /**
+       * Implements hook_field_delete_instance().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_field_delete_instance(\\$instance) {
+        ${1:/* Your code here */}
+      }$0
+    '''

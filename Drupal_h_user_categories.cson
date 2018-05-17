@@ -1,0 +1,15 @@
+'.source.drupal':
+  h_user_categories:
+    prefix: 'h_user_categories'
+    body: '''
+      /**
+       * Implements hook_user_categories().
+       */
+      function ${TM_FILENAME/([^.]*)\\..*$/$1/}_user_categories() {
+        return array(array(
+          'name' => '${1}',
+          'title' => t('${2}'),
+          'weight' => ${3},
+        ));
+      }$0
+    '''
