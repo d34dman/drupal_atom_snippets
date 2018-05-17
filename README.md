@@ -1,18 +1,9 @@
-Drupal snippets for Sublime Text
+Drupal snippets for Atom (https://atom.io/)
 --------------------------------
 
 ### Install
 
-#### With [Package Control](http://wbond.net/sublime_packages/package_control)
-
-- Type `Cmd-Shift-P` on Os X, or `Ctrl-Shift-P` on Windows/Linux.
-- Install the plugin with `Package Control: Install Package`, `Drupal Snippets`.
-
-#### Otherwise
-
-- Open Prefences -> Browse Packages from the menu.
-- Clone this repository or download and unpack the zip package to the 'Users'
-  directory.
+@todo
 
 ### Usage
 
@@ -27,3 +18,9 @@ https://github.com/juhasz/drupal-snippets/commit/1596001b8ac1e90d5a750e7e8226e01
 
 Snippets generated with vim-snippet2sublime-snippets converter.  
 https://github.com/juhasz/vim-snippet2sublime-snippets/commit/75b0b78826f584a1048624692131af6bfbaf84ec
+
+Snippets generated with Drupal sublime snippets
+https://github.com/d34dman/drupal_sublime-snippets
+
+Snippet generated with atomizr
+https://www.npmjs.com/package/node-atomizr
