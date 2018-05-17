@@ -1,6 +1,6 @@
 {
   "name": "drupal_atom_snippets",
-  "version": "1.0.0",
+  "version": "v1.0.1",
   "description": "Drupal atom snippets",
   "engines": {
     "atom": "*",
